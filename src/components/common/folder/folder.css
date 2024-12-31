@@ -1,0 +1,130 @@
+
+.folderRow {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.folder {
+    position: relative; 
+    height: 145px;
+    width: 150px;
+    background-color: #fff; 
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #3CB371;
+}
+
+.folder:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cardFolder {
+    position: relative;
+    height: 110px;
+    width: 100px;
+    background-color: #3CB371;
+    border-radius: 2px 2px 8px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.folderTitle {
+    text-align: center;
+    padding: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: capitalize;
+    background-color: #f9f9f9; 
+    border-radius: 0 0 15px 15px; 
+}
+
+.folderTitle span {
+    color: #3CB371; 
+    transition: color 0.3s ease;
+}
+
+.folderTitle:hover span {
+    color: #FFDF00; 
+}
+.overCardFolder{
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+    border-radius: 2px 2px 8px 8px;
+}
+.cardFolder:hover .overCardFolder {
+    opacity: 0.8;
+}
+.overImageIcon{
+    padding: 6px 7px;
+    border:1px solid #ffff0e;
+    cursor: pointer;
+}
+.overImageIcon span .icon{
+    font-size: 1rem;
+    color:  #ffff0e;
+}
+.modalForDelete{
+    padding: 0 20px;
+    border: 1px solid #e71102;
+}
+
+@media (max-width: 439px) {
+    .folderRow {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (min-width: 440px) and (max-width: 599px) {
+    .folderRow {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 975px) {
+    .folderRow {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (min-width: 976px) {
+    .folderRow {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .folderRow {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+

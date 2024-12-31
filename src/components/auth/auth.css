@@ -1,0 +1,119 @@
+/* Container */
+.authUpperContainer{
+    background: linear-gradient(135deg, #FFDF00, #3CB371);
+}
+.auth-container {
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Button */
+.auth-button {
+    width: 100%;
+    padding: 0.8rem;
+    background: linear-gradient(90deg, #FFDF00, #3CB371);  /* Gold to Green gradient */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.auth-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #FFDF00, #3CB371);  /* Maintain the gradient effect on hover */
+}
+
+/* Animation for the gradient background */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Auth Box */
+.auth-box {
+    width: 90%;
+    max-width: 400px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Title */
+.auth-title {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Form Inputs */
+.auth-input {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Footer Text */
+.auth-footer {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.auth-footer a {
+    color: #FFDF00;  /* Gold color for footer links */
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .auth-box {
+        padding: 1.5rem;
+    }
+}  
+.sideAuthImage {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+  
+.authImage {
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
+}
+  
+@media (max-width: 768px) {
+  .imageBox {
+    display: none; 
+  }
+  .auth-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,85 @@
+.folderOuter{
+    padding: 10px;
+}
+.folderLine{
+    width: 100%;
+    background-color: #3CB371;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-radius: 2px;
+}
+.folderLine::-webkit-scrollbar {
+    height: 10px;
+}
+
+.folderLine::-webkit-scrollbar-thumb {
+    background: #2e8b57; 
+    border-radius: 2px;
+}
+
+.folderLine::-webkit-scrollbar-track {
+    background: #dcdcdc;
+}
+.folderPathMain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.folderLine span .pathIcon{
+    font-size: 25px;
+    color: #fff;
+    margin-bottom: 4px;
+}
+.folderLine span .pathName{
+    font-size: 14px;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.folderLine span .pathName:hover{
+    border: 1px solid #fff;
+}
+
+.createbuttons{
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-end;
+    align-items: center;
+}
+@media (max-width: 439px) {
+    .createbuttons {
+        justify-content: center;
+    }
+}
+
+.modalForCreate{
+    padding: 0 20px;
+    border: 2px solid #3CB371;
+}
+
+.modalHeader{
+    padding: 20px 20px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.folderBtns{
+    padding: 20px 0 10px 0;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    gap: 1rem;
+}
+.inputField{
+    border: 1px solid #3CB371;
+    box-shadow: #ffd900;
+}
+.inputField:focus{
+    outline: none !important;
+    border-color: #FFDF00;
+    box-shadow: 0 0 2px #FFDF00;
+}

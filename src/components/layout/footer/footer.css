@@ -1,0 +1,30 @@
+/* Footer Styles */
+.footer {
+    background-color: #3CB371;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    border-top: 5px solid #FFDF00;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .footer-content p {
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+  
+  .footer-content .heart {
+    color: #FFDF00;
+    font-size: 1.2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .footer {
+      padding: 15px;
+    }
+  
+    .footer-content p {
+      font-size: 0.9rem;
+    }
+  }
+  
