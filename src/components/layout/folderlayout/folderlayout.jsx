@@ -46,7 +46,7 @@ const FolderLayout = () => {
             setFoldersData(response.data);
         } catch (error) {
             console.error('Fetch folders Error ::>>', error);
-            ErrorPOPUP(error.message);
+            ErrorPOPUP(error.response.data.message);
         } finally {
             setLoading(false);
         }
@@ -75,7 +75,7 @@ const FolderLayout = () => {
             setFoldersData(response.data.childFolder);
         } catch (error) {
             console.error('Fetch folder Error ::>>', error);
-            ErrorPOPUP(error.message);
+            ErrorPOPUP(error.response.data.message);
         } finally {
             setLoading(false);
         }
@@ -109,7 +109,7 @@ const FolderLayout = () => {
             fetchFolderhelper();
         } catch (error) {
             console.error('Fetch folder Error ::>>', error);
-            ErrorPOPUP(error.message);
+            ErrorPOPUP(error.response.data.message);
         } finally {
             setLoading(false);
         }
@@ -138,7 +138,7 @@ const FolderLayout = () => {
             fetchFolderhelper();
         } catch (error) {
             console.error('Delete file Error ::>>', error);
-            ErrorPOPUP(error.message);
+            ErrorPOPUP(error.response.data.message);
         } finally {
             setLoading(false);
         }
@@ -155,7 +155,7 @@ const FolderLayout = () => {
             setFilesData(response.data);
         } catch (error) {
             console.error('Fetch files Error ::>>', error);
-            ErrorPOPUP(error.message);
+            ErrorPOPUP(error.response.data.message);
         } finally {
             setLoading(false);
         }
@@ -183,7 +183,7 @@ const FolderLayout = () => {
             fetchFolderhelper();
         } catch (error) {
             console.error('delete folder Error ::>>', error);
-            ErrorPOPUP(error.message);
+            ErrorPOPUP(error.response.data.message);
         } finally {
             setLoading(false);
         }
@@ -226,7 +226,7 @@ const FolderLayout = () => {
             setFile(null); 
         } catch (error) {
             console.error('File Upload Error ::>>', error);
-            ErrorPOPUP(error.message);
+            ErrorPOPUP(error.response.data.message);
         } finally {
             setLoading(false); 
         }

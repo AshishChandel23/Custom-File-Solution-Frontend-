@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./auth.css";
 import apiRequest from "../../constants/ApiCall";
 import Loader from "../common/Loader/loader";
+import { toast } from "react-toastify";
 
 const Register = ({setShowAuth}) => {
   const [loading, setLoading] = useState(false);
@@ -21,19 +22,30 @@ const Register = ({setShowAuth}) => {
               payload:userInfo,
           });
           reset();
-          console.log("Response :::>>", response);
+          toast.success(response.data.message, {
+                          position: "top-right",
+                          autoClose: 2000,
+                          hideProgressBar: false,
+                          closeOnClick: true,
+                          pauseOnHover: true,
+                          draggable: true,
+                      });
           setShowAuth(true);
       } catch (error) {
-          console.log("Login Error :;>", error);
+          console.error("Register Error :;>", error.response.data.message);
+          toast.error(error.response.data.message, {
+                          position: "top-right",
+                          autoClose: 2000,
+                          hideProgressBar: false,
+                          closeOnClick: true,
+                          pauseOnHover: true,
+                          draggable: true,
+                      });
       } finally{
           setLoading(false);
       }
   }
-
-  if(loading){
-      <Loader/>
-  }
-  else return (
+  return (
     <div className="auth-container">
       <div className="auth-box">
         <h2 className="auth-title">Register</h2>

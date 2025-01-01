@@ -4,6 +4,7 @@ import apiRequest from "../../constants/ApiCall";
 import useLocalStorage from "../../hooks/useLocalStrorage";
 import { useNavigate } from "react-router-dom";
 import Loader from "../common/Loader/loader";
+import { toast, ToastContainer } from "react-toastify";
 
 const Login = ({setShowAuth}) => {
     const [loading, setLoading] = useState(false);
@@ -28,16 +29,29 @@ const Login = ({setShowAuth}) => {
             useLocalStorage().setItem('user_token', response.data.token);
             useLocalStorage().setItem('accountId', response.data.accountId);
             navigate('/dashboard');
+            toast.success(response.data.message, {
+                            position: "top-right",
+                            autoClose: 2000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                        });
         } catch (error) {
-            console.log("Login Error :;>", error);
+            console.error("Login Error :;>", error.response.data.message);
+            toast.error(error.response.data.message, {
+                            position: "top-right",
+                            autoClose: 2000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                        });
         } finally{
             setLoading(false);
         }
     }
-    if(loading){
-        <Loader/>
-    }
-    else return (
+    return (
         <div className="auth-container">
           <div className="auth-box">
             <h2 className="auth-title">Login</h2>
@@ -66,6 +80,7 @@ const Login = ({setShowAuth}) => {
               Don't have an account? <a href="#" onClick={()=>(setShowAuth(false))}>Register</a>
             </p>
           </div>
+          <ToastContainer />
         </div>
       );
 };
